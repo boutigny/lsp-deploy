@@ -18,4 +18,5 @@ Operations guide
    cert-issuer/index
    cert-manager/index
    logging/index
+   squash-api/index
    vault-secrets-operator/index
