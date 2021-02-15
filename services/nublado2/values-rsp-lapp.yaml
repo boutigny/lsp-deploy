@@ -1,0 +1,23 @@
+nublado2:
+  jupyterhub:
+    debug:
+      enabled: true
+
+    hub:
+      image:
+        name: lsstsqre/nublado2
+        tag: "1.0.0"
+
+    singleuser:
+      storage:
+        type: none
+
+    ingress:
+      hosts: ["minikube.lsst.codes"]
+      annotations:
+        nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp/login"
+
+  config:
+    base_url: "https://rsp-lapp.ddns.net/"
+
+  vault_secret_path: "secret/k8s_operator/rsp-lapp/nublado2"

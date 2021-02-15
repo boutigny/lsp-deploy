@@ -1,0 +1,25 @@
+gafaelfawr:
+  pull_secret: 'pull-secret'
+  host: rsp-lapp.ddns.net
+  ingress:
+    host: rsp-lapp.ddns.net
+  vault_secrets_path: "secret/k8s_operator/rsp-lapp/gafaelfawr"
+
+  # Session length and token expiration (in minutes).
+  issuer:
+    exp_minutes: 43200  # 30 days
+
+  # Use github authetication
+  github:
+    client_id: 59331e15cb2a3c3261ad
+
+  # Use CILogon authentication.
+  #cilogon:
+  #  client_id: "cilogon:/client_id/74e865cd71a3a327096d36081166b739"
+  #  redirect_url: "https://rsp-lapp.ddns.net/login"
+  # login_params:
+  #    skin: "LSST"
+
+pull-secret:
+  enabled: true
+  path: secret/k8s_operator/rsp-lapp/pull-secret
