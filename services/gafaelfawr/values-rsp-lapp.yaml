@@ -16,23 +16,23 @@ gafaelfawr:
   # Allow access by GitHub team.
   group_mapping:
     "exec:admin":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "exec:user":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "read:workspace":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "read:workspace/user":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "write:workspace/user":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "exec:portal":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "exec:notebook":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "read:tap":
-      - "lsst-france"
+      - "lsst-france-Calcul"
     "read:image":
-      - "lsst-france"
+      - "lsst-france-Calcul"
 
   # Use CILogon authentication.
   #cilogon:
