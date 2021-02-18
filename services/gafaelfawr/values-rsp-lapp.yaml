@@ -9,30 +9,30 @@ gafaelfawr:
   issuer:
     exp_minutes: 43200  # 30 days
 
-  # Use github authetication
+  # Use github authentication
   github:
     client_id: 59331e15cb2a3c3261ad
 
   # Allow access by GitHub team.
   group_mapping:
     "exec:admin":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "exec:user":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "read:workspace":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "read:workspace/user":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "write:workspace/user":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "exec:portal":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "exec:notebook":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "read:tap":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
     "read:image":
-      - "lsst-france-Calcul"
+      - "lsst-france-calcul"
 
   # Use CILogon authentication.
   #cilogon:
