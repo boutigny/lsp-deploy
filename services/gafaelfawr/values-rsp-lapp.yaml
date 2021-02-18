@@ -13,6 +13,27 @@ gafaelfawr:
   github:
     client_id: 59331e15cb2a3c3261ad
 
+  # Allow access by GitHub team.
+  group_mapping:
+    "exec:admin":
+      - "lsst-france"
+    "exec:user":
+      - "lsst-france"
+    "read:workspace":
+      - "lsst-france"
+    "read:workspace/user":
+      - "lsst-france"
+    "write:workspace/user":
+      - "lsst-france"
+    "exec:portal":
+      - "lsst-france"
+    "exec:notebook":
+      - "lsst-france"
+    "read:tap":
+      - "lsst-france"
+    "read:image":
+      - "lsst-france"
+
   # Use CILogon authentication.
   #cilogon:
   #  client_id: "cilogon:/client_id/74e865cd71a3a327096d36081166b739"
