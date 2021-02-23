@@ -1,6 +1,6 @@
 nublado:
   pull_secret: 'pull-secret'
-  fqdn: minikube.lsst.codes
+  fqdn: rsp-lapp.ddns.net
 
   oauth_provider: 'jwt'
 
@@ -30,7 +30,7 @@ nublado:
       releases: 0
       weeklies: 1
       cachefile: '/home/jovyan/repo-cache.json'
-      repo_username: 'sqreadmin'
+      #repo_username: 'sqreadmin'
 
     resources:
       nodejs_max_mem: '6144'
@@ -53,7 +53,7 @@ nublado:
       annotations:
         nginx.ingress.kubernetes.io/auth-request-redirect: $request_uri
         nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
-        nginx.ingress.kubernetes.io/auth-signin: "https://minikube.lsst.codes/login"
+        nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp.ddns.net/login"
         nginx.ingress.kubernetes.io/auth-url: "http://gafaelfawr-service.gafaelfawr.svc.cluster.local:8080/auth?scope=exec:notebook"
         nginx.ingress.kubernetes.io/configuration-snippet: |
           proxy_set_header X-Forwarded-Proto https;
@@ -62,7 +62,7 @@ nublado:
           auth_request_set $auth_token $upstream_http_x_auth_request_token;
           proxy_set_header X-Portal-Authorization "Bearer $auth_token";
           error_page 403 = "/auth/forbidden?scope=exec:notebook";
-      host: minikube.lsst.codes
+      host: rsp-lapp.ddns.net
       tls:
         cluster_issuer: cert-issuer-letsencrypt-dns
         secret: nublado-tls-secret
