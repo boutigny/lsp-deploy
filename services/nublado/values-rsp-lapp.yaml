@@ -70,20 +70,6 @@ nublado:
 
   mountpoints: |
     [
-      { "disabled": true,
-        "mountpoint": "/example -- if it doesn't start with '/' we add it",
-        "fileserver-host": "omit to use Hub settings",
-        "fileserver-export": "defaults to '/exports<mountpoint>'",
-        "hostpath": "if you're doing direct host mounts, e.g. GPFS w/o NFS",
-        "mode": "rw or ro, defaults to 'ro'",
-        "options": "mount options, e.g. 'local_lock=all'"
-      },
-      { "disabled": true,
-        "mountpoint": "/data",
-        "mode": "rw",
-        "fileserver-host": "192.168.0.64",
-        "fileserver-export": "/data"
-      }
     ]
 
 pull-secret:
