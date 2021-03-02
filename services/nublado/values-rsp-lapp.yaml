@@ -78,7 +78,7 @@ nublado:
         "mode": "rw or ro, defaults to 'ro'",
         "options": "mount options, e.g. 'local_lock=all'"
       },
-      {
+      { "disabled": true,
         "mountpoint": "/data",
         "mode": "rw",
         "fileserver-host": "192.168.0.64",
