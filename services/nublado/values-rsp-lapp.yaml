@@ -79,29 +79,10 @@ nublado:
         "options": "mount options, e.g. 'local_lock=all'"
       },
       {
-        "mountpoint": "/home",
+        "mountpoint": "/data",
         "mode": "rw",
-        "hostpath": "/data/user/staff/jhome"
-      },
-      {
-        "mountpoint": "/project",
-        "mode": "rw",
-        "hostpath": "/data/user/staff/project"
-      },
-      {
-        "mountpoint": "/scratch",
-        "mode": "rw",
-        "hostpath": "/data/user/staff/scratch"
-      },
-      {
-        "mountpoint": "/datasets",
-        "mode": "ro",
-        "hostpath": "/data/user/precursor_data/datasets"
-      },
-      {
-        "mountpoint": "/lsstdata/offline/teststand",
-        "mode": "ro",
-        "hostpath": "/data/offline/teststand"
+        "fileserver-host": "192.168.0.64",
+        "fileserver-export": "/data"
       }
     ]
 
