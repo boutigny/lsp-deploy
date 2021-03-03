@@ -84,6 +84,12 @@ nublado:
         "fileserver-host": "192.168.0.64",
         "fileserver-export": "/data"
       }
+      {
+        "mountpoint": "/home",
+        "mode": "rw",
+        "fileserver-host": "192.168.0.64",
+        "fileserver-export": "/home"
+      }
     ]
 
 pull-secret:
