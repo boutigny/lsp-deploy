@@ -20,8 +20,8 @@ ingress-nginx:
 
 vault_certificate:
   enabled: true
-  path: secret/k8s_operator/minikube.lsst.codes/ingress-nginx
-  
+  path: secret/k8s_operator/rsp-lapp/ingress-nginx
+
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
