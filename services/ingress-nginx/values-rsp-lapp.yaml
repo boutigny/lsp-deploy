@@ -13,15 +13,12 @@ ingress-nginx:
     dnsPolicy: ClusterFirstWithHostNet
     admissionWebhooks:
       enabled: false
-    extraArgs:
-      default-ssl-certificate: ingress-nginx/ingress-certificate
     podLabels:
       hub.jupyter.org/network-access-proxy-http: "true"
 
 vault_certificate:
-  enabled: true
-  path: secret/k8s_operator/rsp-lapp/ingress-nginx
-
+  enabled: False
+  
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
