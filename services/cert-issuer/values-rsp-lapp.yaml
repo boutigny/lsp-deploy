@@ -1,5 +1,5 @@
 solver:
   route53:
-    aws_access_key_id: AKIAQSJOS2SFLUEVXZDB
-    hosted_zone: Z06873202D7WVTZUFOQ42
+    aws_access_key_id: AKIARTRDGJUTTJ653XIU
+    hosted_zone: Z04545642P25CG9CM325L
     vault_secret_path: "secret/k8s_operator/rsp-lapp/cert-manager"
