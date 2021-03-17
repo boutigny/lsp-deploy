@@ -8,19 +8,12 @@ ingress-nginx:
       ssl-redirect: "true"
       use-forwarded-headers: "true"
     service:
-      type: ClusterIP
-    hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
-    admissionWebhooks:
-      enabled: false
-    extraArgs:
-      default-ssl-certificate: ingress-nginx/ingress-certificate
+      externalTrafficPolicy: Local
     podLabels:
       hub.jupyter.org/network-access-proxy-http: "true"
 
 vault_certificate:
-  enabled: true
-  path: secret/k8s_operator/minikube.lsst.codes/ingress-nginx
+  enabled: false
 
 pull-secret:
   enabled: true
