@@ -19,7 +19,8 @@ ingress-nginx:
       hub.jupyter.org/network-access-proxy-http: "true"
 
 vault_certificate:
-  enabled: false
+  enabled: true
+  path: secret/k8s_operator/minikube.lsst.codes/ingress-nginx
 
 pull-secret:
   enabled: true
