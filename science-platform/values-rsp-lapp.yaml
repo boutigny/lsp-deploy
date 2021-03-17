@@ -1,4 +1,6 @@
 environment: rsp-lapp
+fqdm: rsp-lapp.ddns.net
+vault_path_prefix: secret/k8s_operator/rsp-lapp
 
 argo:
   enabled: true
