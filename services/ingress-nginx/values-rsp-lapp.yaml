@@ -8,7 +8,11 @@ ingress-nginx:
       ssl-redirect: "true"
       use-forwarded-headers: "true"
     service:
-      externalTrafficPolicy: Local
+      type: ClusterIP
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    admissionWebhooks:
+      enabled: false
     podLabels:
       hub.jupyter.org/network-access-proxy-http: "true"
 
