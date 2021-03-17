@@ -13,6 +13,8 @@ ingress-nginx:
     dnsPolicy: ClusterFirstWithHostNet
     admissionWebhooks:
       enabled: false
+    extraArgs:
+      default-ssl-certificate: ingress-nginx/ingress-certificate
     podLabels:
       hub.jupyter.org/network-access-proxy-http: "true"
 
