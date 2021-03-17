@@ -28,6 +28,10 @@ argo-cd:
         - url: https://charts.helm.sh/stable
           name: stable
 
+vault_secret:
+  enabled: true
+  path: secret/k8s_operator/rsp-lapp/argocd
+
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
