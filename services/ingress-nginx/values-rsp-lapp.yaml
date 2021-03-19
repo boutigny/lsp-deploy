@@ -9,11 +9,14 @@ ingress-nginx:
       use-forwarded-headers: "true"
     service:
       externalTrafficPolicy: Local
+    extraArgs:
+      default-ssl-certificate: ingress-nginx/ingress-certificate
     podLabels:
       hub.jupyter.org/network-access-proxy-http: "true"
 
 vault_certificate:
-  enabled: false
+  enabled: true
+  path: secret/k8s_operator/rsp-lapp/ingress-nginx
 
 pull-secret:
   enabled: true
