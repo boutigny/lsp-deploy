@@ -1,0 +1,13 @@
+mobu:
+  pull_secret: 'pull-secret'
+  gafaelfawr_secrets_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
+  mobu_secrets_path: "secret/k8s_operator/dboutigny.freeboxos.fr/mobu"
+  environment_url: "https://dboutigny.freeboxos.fr"
+  host: "dboutigny.freeboxos.fr"
+
+  image:
+    tag: master
+
+pull-secret:
+  enabled: true
+  path: secret/k8s_operator/dboutigny.freeboxos.fr/pull-secret

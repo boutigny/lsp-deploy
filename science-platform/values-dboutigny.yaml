@@ -1,0 +1,48 @@
+environment: dboutigny
+fqdm: dboutigny.freeboxos.fr
+vault_path_prefix: secret/k8s_operator/dboutigny.freeboxos.fr
+
+argo:
+  enabled: true
+cachemachine:
+  enabled: true
+cert_issuer:
+  enabled: false
+cert_manager:
+  enabled: true
+chronograf:
+  enabled: false
+exposurelog:
+  enabled: false
+gafaelfawr:
+  enabled: true
+influxdb:
+  enabled: false
+kapacitor:
+  enabled: false
+landing_page:
+  enabled: true
+logging:
+  enabled: false
+mobu:
+  enabled: true
+ingress_nginx:
+  enabled: true
+nublado:
+  enabled: true
+nublado2:
+  enabled: true
+obstap:
+  enabled: true
+portal:
+  enabled: true
+postgres:
+  enabled: true
+rancher_external_ip_webhook:
+  enabled: true
+squash_api:
+  enabled: false
+tap:
+  enabled: true
+vault_secrets_operator:
+  enabled: true

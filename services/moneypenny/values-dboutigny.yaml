@@ -1,0 +1,14 @@
+moneypenny:
+  host: "dboutigny.freeboxos.fr"
+
+  ingress:
+    enabled: true
+    hosts:
+      - host: dboutigny.freeboxos.fr
+        paths: ["/moneypenny"]
+    annotations:
+      nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:admin"
+
+  vault_secrets:
+    enabled: true
+    path: "secret/k8s_operator/dboutigny.freeboxos.fr/pull-secret"
