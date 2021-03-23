@@ -1,0 +1,97 @@
+nublado:
+  pull_secret: 'pull-secret'
+  fqdn: dboutigny.freeboxos.fr
+
+  oauth_provider: 'jwt'
+  gafaelfawr_secrets_path: 'secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr'
+
+  lab:
+    restrict_nodes: 'true'
+
+    resources:
+      nodejs_max_mem: '6144'
+      mb_per_cpu: 3072
+
+    image:
+      cachefile: "/home/jovyan/repo-cache.json"
+
+    cull_timeout: 90000
+
+  hub:
+    persistent_home: false
+    image: 'lsstsqre/sciplat-hub:0.35.4'
+
+  wf:
+    ingress_ui:
+      annotations:
+        nginx.ingress.kubernetes.io/auth-method: GET
+        nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
+        nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_set_header X-Forwarded-Proto https;
+          proxy_set_header X-Forwarded-Port 443;
+          proxy_set_header X-Forwarded-Path /workflow;
+          auth_request_set $auth_token $upstream_http_x_auth_request_token;
+          proxy_set_header X-Portal-Authorization "Bearer $auth_token";
+          error_page 403 = "/auth/forbidden?scope=exec:notebook";
+
+  prepuller:
+    image: 'lsstsqre/prepuller:0.9.4'
+    schedule: "57 01,07,13,19 * * *
+
+  routes:
+    soda: '/api/image/soda'
+    external:
+      instance: 'https://dboutigny.freeboxos.fr'
+
+  dask:
+    restrict_nodes: 'true'
+
+  vault_secrets:
+    enabled: true
+    path: secret/k8s_operator/dboutigny.freeboxos.fr/nublado
+
+  proxy:
+    ingress:
+      annotations:
+        nginx.ingress.kubernetes.io/auth-request-redirect: $request_uri
+        nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
+        nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_set_header X-Forwarded-Proto https;
+          proxy_set_header X-Forwarded-Port 443;
+          proxy_set_header X-Forwarded-Path /nb;
+          auth_request_set $auth_token $upstream_http_x_auth_request_token;
+          proxy_set_header X-Portal-Authorization "Bearer $auth_token";
+          error_page 403 = "/auth/forbidden?scope=exec:notebook";
+      host: dboutigny.freeboxos.fr
+
+  mountpoints: |
+    [
+      { "disabled": true,
+        "mountpoint": "/example -- if it doesn't start with '/' we add it",
+        "fileserver-host": "omit to use Hub settings",
+        "fileserver-export": "defaults to '/exports<mountpoint>'",
+        "hostpath": "if you're doing direct host mounts, e.g. GPFS w/o NFS",
+        "mode": "rw or ro, defaults to 'ro'",
+        "options": "mount options, e.g. 'local_lock=all'"
+      },
+      {
+        "mountpoint": "/data",
+        "mode": "rw",
+        "fileserver-host": "192.168.0.64",
+        "fileserver-export": "/data"
+      },
+      {
+        "mountpoint": "/home",
+        "mode": "rw",
+        "fileserver-host": "192.168.0.64",
+        "fileserver-export": "/home"
+      }
+    ]
+
+pull-secret:
+  enabled: true
+  path: secret/k8s_operator/dboutigny.freeboxos.fr/pull-secret

@@ -1,0 +1,5 @@
+solver:
+  route53:
+    aws_access_key_id: AKIARTRDGJUTTJ653XIU
+    hosted_zone: Z04545642P25CG9CM325L
+    vault_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/cert-manager"
