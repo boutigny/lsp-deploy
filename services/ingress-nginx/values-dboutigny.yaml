@@ -10,7 +10,7 @@ ingress-nginx:
     service:
       type: ClusterIP
     hostNetwork: true
-    dnsPolicy: ClusterFirstWithHostNet
+    dnsPolicy: ClusterFirst
     admissionWebhooks:
         enabled: false  
     extraArgs:
