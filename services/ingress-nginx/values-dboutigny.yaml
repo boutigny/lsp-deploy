@@ -9,8 +9,8 @@ ingress-nginx:
       use-forwarded-headers: "true"
     service:
       type: ClusterIP
-    hostNetwork: true
-    dnsPolicy: ClusterFirst
+    hostNetwork: false
+    dnsPolicy: ClusterFirstWithHostNet
     admissionWebhooks:
         enabled: false  
     extraArgs:
