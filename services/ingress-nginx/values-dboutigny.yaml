@@ -9,8 +9,6 @@ ingress-nginx:
       use-forwarded-headers: "true"
     service:
       externalTrafficPolicy: Local
-    admissionWebhooks:
-        enabled: false  
     extraArgs:
       default-ssl-certificate: ingress-nginx/ingress-certificate
     podLabels:
