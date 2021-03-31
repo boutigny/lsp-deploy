@@ -9,6 +9,8 @@ ingress-nginx:
       use-forwarded-headers: "true"
     service:
       externalTrafficPolicy: Local
+    hostNetwork: true
+    kind: DaemonSet
     admissionWebhooks:
         enabled: false 
     extraArgs:
