@@ -8,9 +8,8 @@ ingress-nginx:
       ssl-redirect: "true"
       use-forwarded-headers: "true"
     service:
-      type: ""
+      externalTrafficPolicy: Local
     hostNetwork: true
-    kind: DaemonSet
     admissionWebhooks:
         enabled: false 
     extraArgs:
