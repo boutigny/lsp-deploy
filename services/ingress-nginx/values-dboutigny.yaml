@@ -9,7 +9,7 @@ ingress-nginx:
       use-forwarded-headers: "true"
     service:
       externalTrafficPolicy: Local
-      loadBalancerIP: "91.171.119.3"
+      loadBalancerIP: "192.168.1.240"
     admissionWebhooks:
         enabled: false 
     extraArgs:
