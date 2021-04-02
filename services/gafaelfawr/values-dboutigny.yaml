@@ -14,10 +14,10 @@ gafaelfawr:
     host: "dboutigny.freeboxos.fr"
 
     github:
-      client_id: 59331e15cb2a3c3261ad
+      clientId: "59331e15cb2a3c3261ad"
 
     # Allow access by GitHub team.
-    group_mapping:
+    groupMapping:
       "exec:admin":
         - "lsst-france-calcul"
       "exec:user":
