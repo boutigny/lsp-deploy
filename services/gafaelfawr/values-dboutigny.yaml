@@ -1,6 +1,6 @@
 gafaelfawr:
-  pull_secret: 'pull-secret'
-  host: dboutigny.freeboxos.fr
+  imagePullSecrets:
+    - name: "pull-secret"
   ingress:
     host: dboutigny.freeboxos.fr
   vault_secrets_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
@@ -9,7 +9,7 @@ gafaelfawr:
   redis:
     persistence:
       enabled: false
-      
+
   config:
     host: "dboutigny.freeboxos.fr"
 
