@@ -5,34 +5,37 @@ gafaelfawr:
     host: dboutigny.freeboxos.fr
   vault_secrets_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
 
-  # Session length and token expiration (in minutes).
-  issuer:
-    exp_minutes: 43200  # 30 days
+  # Reset token storage on every Redis restart.
+  redis:
+    persistence:
+      enabled: false
+      
+  config:
+    host: "dboutigny.freeboxos.fr"
 
-  # Use github authentication
-  github:
-    client_id: 59331e15cb2a3c3261ad
+    github:
+      client_id: 59331e15cb2a3c3261ad
 
-  # Allow access by GitHub team.
-  group_mapping:
-    "exec:admin":
-      - "lsst-france-calcul"
-    "exec:user":
-      - "lsst-france-calcul"
-    "read:workspace":
-      - "lsst-france-calcul"
-    "read:workspace/user":
-      - "lsst-france-calcul"
-    "write:workspace/user":
-      - "lsst-france-calcul"
-    "exec:portal":
-      - "lsst-france-calcul"
-    "exec:notebook":
-      - "lsst-france-calcul"
-    "read:tap":
-      - "lsst-france-calcul"
-    "read:image":
-      - "lsst-france-calcul"
+    # Allow access by GitHub team.
+    group_mapping:
+      "exec:admin":
+        - "lsst-france-calcul"
+      "exec:user":
+        - "lsst-france-calcul"
+      "read:workspace":
+        - "lsst-france-calcul"
+      "read:workspace/user":
+        - "lsst-france-calcul"
+      "write:workspace/user":
+        - "lsst-france-calcul"
+      "exec:portal":
+        - "lsst-france-calcul"
+      "exec:notebook":
+        - "lsst-france-calcul"
+      "read:tap":
+        - "lsst-france-calcul"
+      "read:image":
+        - "lsst-france-calcul"
 
   # Use CILogon authentication.
   #cilogon:
