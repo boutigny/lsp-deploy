@@ -18,6 +18,7 @@ argo-cd:
       - "--insecure=true"
 
     config:
+      url: https://dboutigny.freebox.fr/argo-cd
       helm.repositories: |
         - url: https://lsst-sqre.github.io/charts/
           name: lsst-sqre
