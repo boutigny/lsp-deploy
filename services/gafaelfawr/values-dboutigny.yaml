@@ -3,7 +3,7 @@ gafaelfawr:
     - name: "pull-secret"
   ingress:
     host: dboutigny.freeboxos.fr
-  vault_secrets_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
+  vaultSecretsPath: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
 
   # Reset token storage on every Redis restart.
   redis:
