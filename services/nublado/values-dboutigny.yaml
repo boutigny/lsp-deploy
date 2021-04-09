@@ -55,7 +55,7 @@ nublado:
   proxy:
     ingress:
       annotations:
-        nginx.ingress.kubernetes.io/auth-request-redirect: $request_uri
+        nginx.ingress.kubernetes.io/auth-method: GET
         nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
         nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
         nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook"
