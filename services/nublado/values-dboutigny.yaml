@@ -81,13 +81,13 @@ nublado:
       {
         "mountpoint": "/data",
         "mode": "rw",
-        "fileserver-host": "192.168.0.64",
+        "fileserver-host": "192.168.0.69",
         "fileserver-export": "/data"
       },
       {
         "mountpoint": "/home",
         "mode": "rw",
-        "fileserver-host": "192.168.0.64",
+        "fileserver-host": "192.168.0.69",
         "fileserver-export": "/home"
       }
     ]
