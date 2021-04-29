@@ -8,8 +8,8 @@ postgres:
     db: 'jupyterhub'
   image:
     tag: '0.0.5'
-  postgres_storage_class: 'slow'
-  volume_name: 'pv001'
+  postgres_storage_class: 'rsp-local-storage'
+  volume_name: 'postgres-data-rsp-bou003'
 
 pull-secret:
   enabled: true
