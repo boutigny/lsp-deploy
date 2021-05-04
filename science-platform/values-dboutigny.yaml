@@ -26,6 +26,8 @@ logging:
   enabled: false
 mobu:
   enabled: false
+moneypenny:
+  enabled: true
 ingress_nginx:
   enabled: true
 nublado:
