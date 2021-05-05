@@ -19,7 +19,7 @@ nublado:
 
   hub:
     persistent_home: false
-    image: 'lsstsqre/sciplat-hub:0.35.4'
+    image: 'lsstsqre/sciplat-hub:0.38.0'
 
   wf:
     ingress_ui:
