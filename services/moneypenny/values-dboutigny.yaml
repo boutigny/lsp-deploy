@@ -21,7 +21,7 @@ moneypenny:
           runAsUser: 0
           runAsNonRootUser: false
         volumeMounts:
-        - mountPath: /home
+        - mountPath: /homedirs
           name: homedirs
     retire:
       - name: farthing
