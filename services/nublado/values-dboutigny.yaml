@@ -17,6 +17,8 @@ nublado:
 
     cull_timeout: 90000
 
+    enable_moneypenny: 'true'
+
   hub:
     persistent_home: false
     image: 'lsstsqre/sciplat-hub:exp_0.38.0'
