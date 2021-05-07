@@ -90,7 +90,7 @@ nublado:
         "mountpoint": "/home",
         "mode": "rw",
         "fileserver-host": "192.168.0.69",
-        "fileserver-export": "/home"
+        "fileserver-export": "/jhome"
       }
     ]
 
