@@ -34,4 +34,4 @@ moneypenny:
       - name: homedirs
         nfs:
           server: 192.168.0.69
-          path: /home
+          path: /jhome
