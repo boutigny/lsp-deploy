@@ -4,9 +4,7 @@ nublado2:
       enabled: true
 
     hub:
-      image:
-        name: lsstsqre/nublado2
-        tag: "1.0.0"
+      base_url: "/nb2"
 
     singleuser:
       storage:
@@ -19,6 +17,21 @@ nublado2:
 
   config:
     base_url: "dboutigny.freeboxos.fr/"
+
+    volumes:
+      - name: data
+        nfs:
+          path: /data
+          server: 192.168.0.69
+      - name: home
+        nfs:
+          path: /jhome
+          server: 192.168.0.69
+    volume_mounts:
+      - name: data
+        mountPath: /data
+      - name: home
+        mountPath: /home
 
   vault_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/nublado2"
   gafaelfawr_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
