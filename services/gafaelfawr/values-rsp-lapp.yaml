@@ -1,46 +1,50 @@
 gafaelfawr:
-  pull_secret: 'pull-secret'
-  host: rsp-lapp.ddns.net
+  imagePullSecrets:
+    - name: "pull-secret"
   ingress:
-    host: rsp-lapp.ddns.net
-  vault_secrets_path: "secret/k8s_operator/rsp-lapp/gafaelfawr"
+    host: rsp.lapp.in2p3.fr
+  vaultSecretsPath: "secret/k8s_operator/rsp-lapp/gafaelfawr"
 
-  # Session length and token expiration (in minutes).
-  issuer:
-    exp_minutes: 43200  # 30 days
+  # Reset token storage on every Redis restart.
+  redis:
+    persistence:
+      enabled: false
 
-  # Use github authentication
-  github:
-    client_id: 59331e15cb2a3c3261ad
+  config:
+    host: "rsp.lapp.in2p3.fr"
 
-  # Allow access by GitHub team.
-  group_mapping:
-    "exec:admin":
-      - "lsst-france-calcul"
-    "exec:user":
-      - "lsst-france-calcul"
-    "read:workspace":
-      - "lsst-france-calcul"
-    "read:workspace/user":
-      - "lsst-france-calcul"
-    "write:workspace/user":
-      - "lsst-france-calcul"
-    "exec:portal":
-      - "lsst-france-calcul"
-    "exec:notebook":
-      - "lsst-france-calcul"
-    "read:tap":
-      - "lsst-france-calcul"
-    "read:image":
-      - "lsst-france-calcul"
+    github:
+      clientId: 59331e15cb2a3c3261ad
+
+    # Allow access by GitHub team.
+    groupMapping:
+      "exec:admin":
+        - "lsst-france-calcul"
+      "exec:user":
+        - "lsst-france-calcul"
+      "read:workspace":
+        - "lsst-france-calcul"
+      "read:workspace/user":
+        - "lsst-france-calcul"
+      "write:workspace/user":
+        - "lsst-france-calcul"
+      "exec:portal":
+        - "lsst-france-calcul"
+      "exec:notebook":
+        - "lsst-france-calcul"
+      "read:tap":
+        - "lsst-france-calcul"
+      "read:image":
+        - "lsst-france-calcul"
 
   # Use CILogon authentication.
   #cilogon:
   #  client_id: "cilogon:/client_id/74e865cd71a3a327096d36081166b739"
-  #  redirect_url: "https://rsp-lapp.ddns.net/login"
+  #  redirect_url: "https://rsp.lapp.in2p3.fr/login"
   # login_params:
   #    skin: "LSST"
 
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
+
