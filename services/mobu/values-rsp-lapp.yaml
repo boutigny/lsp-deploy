@@ -2,8 +2,8 @@ mobu:
   pull_secret: 'pull-secret'
   gafaelfawr_secrets_path: "secret/k8s_operator/rsp-lapp/gafaelfawr"
   mobu_secrets_path: "secret/k8s_operator/rsp-lapp/mobu"
-  environment_url: "https://rsp-lapp.ddns.net"
-  host: "minikube.lsst.codes"
+  environment_url: "https://rsp.lapp.in2p3.fr"
+  host: "rsp.lapp.in2p3.fr"
 
   image:
     tag: master
@@ -11,3 +11,4 @@ mobu:
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
+

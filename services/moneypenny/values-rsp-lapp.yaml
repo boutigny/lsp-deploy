@@ -1,0 +1,38 @@
+moneypenny:
+  host: "rsp.lapp.in2p3.fr"
+
+  ingress:
+    enabled: true
+    hosts:
+      - host: rsp.lapp.in2p3.fr
+        paths: ["/moneypenny"]
+    annotations:
+      nginx.ingress.kubernetes.io/auth-url: "https://rsp.lapp.in2p3.fr.fr/auth?scope=exec:admin"
+
+  vault_secrets:
+    enabled: true
+    path: "secret/k8s_operator/rsp-lapp/pull-secret"
+
+  orders: |
+    commission:
+      - name: initcommission
+        image: lsstsqre/inituserhome
+        securityContext:
+          runAsUser: 0
+          runAsNonRootUser: false
+        volumeMounts:
+        - mountPath: /homedirs
+          name: homedirs
+    retire:
+      - name: farthing
+        image: lsstsqre/farthing
+        securityContext:
+          runAsUser: 1000
+          runAsNonRootUser: true
+          allowPrivilegeEscalation: false
+    volumes:
+      - name: homedirs
+        nfs:
+          server: 192.168.0.69
+          path: /home
+

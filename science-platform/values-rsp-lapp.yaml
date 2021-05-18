@@ -1,5 +1,5 @@
 environment: rsp-lapp
-fqdm: rsp-lapp.ddns.net
+fqdm: rsp.lapp.in2p3.fr
 vault_path_prefix: secret/k8s_operator/rsp-lapp
 
 argo:
@@ -25,6 +25,8 @@ landing_page:
 logging:
   enabled: false
 mobu:
+  enabled: false
+moneypenny:
   enabled: true
 ingress_nginx:
   enabled: true
@@ -33,13 +35,13 @@ nublado:
 nublado2:
   enabled: true
 obstap:
-  enabled: true
+  enabled: false
 portal:
   enabled: true
 postgres:
   enabled: true
 rancher_external_ip_webhook:
-  enabled: true
+  enabled: false
 squash_api:
   enabled: false
 tap:

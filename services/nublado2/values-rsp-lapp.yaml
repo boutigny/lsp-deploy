@@ -13,11 +13,15 @@ nublado2:
         type: none
 
     ingress:
-      hosts: ["minikube.lsst.codes"]
+      hosts: ["rsp.lapp.in2p3.fr"]
       annotations:
-        nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp/login"
+        nginx.ingress.kubernetes.io/auth-signin: "https://rsp.lapp.in2p3.fr/login"
 
   config:
-    base_url: "https://rsp-lapp.ddns.net/"
+    base_url: "rsp.lapp.in2p3.fr/"
 
   vault_secret_path: "secret/k8s_operator/rsp-lapp/nublado2"
+  gafaelfawr_secrets_path: "secret/k8s_operator/rsp-lapp/gafaelfawr"
+
+
+

@@ -1,15 +1,15 @@
 firefly:
   pull_secret: 'pull-secret'
   image:
-    tag: "1.1.1"
+    tag: "rc-2.1.0-2"
 
   ingress:
-    host: "rsp-lapp.ddns.net"
+    host: "rsp.lapp.in2p3.fr"
     annotations:
       nginx.ingress.kubernetes.io/auth-method: GET
       nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Uid, X-Auth-Request-Token
-      nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp.ddns.net/login"
-      nginx.ingress.kubernetes.io/auth-url: "http://gafaelfawr-service.gafaelfawr.svc.cluster.local:8080/auth?scope=exec:portal"
+      nginx.ingress.kubernetes.io/auth-signin: "https://rsp.lapp.in2p3.fr/login"
+      nginx.ingress.kubernetes.io/auth-url: "http://rsp.lapp.in2p3.fr/auth?scope=exec:portal"
       nginx.ingress.kubernetes.io/configuration-snippet: |
         proxy_set_header X-Original-URI $request_uri;
         proxy_set_header X-Forwarded-Proto https;
@@ -33,3 +33,4 @@ firefly:
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
+

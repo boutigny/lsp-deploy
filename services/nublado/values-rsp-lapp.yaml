@@ -1,19 +1,35 @@
 nublado:
   pull_secret: 'pull-secret'
-  fqdn: rsp-lapp.ddns.net
+  fqdn: rsp.lapp.in2p3.fr
 
   oauth_provider: 'jwt'
+  gafaelfawr_secrets_path: 'secret/k8s_operator/rsp-lapp/gafaelfawr'
+
+  lab:
+    restrict_nodes: 'true'
+
+    resources:
+      nodejs_max_mem: '6144'
+      mb_per_cpu: 3072
+
+    image:
+      cachefile: "/home/jovyan/repo-cache.json"
+
+    cull_timeout: 90000
+
+    enable_moneypenny: 'true'
 
   hub:
-    image: 'lsstsqre/sciplat-hub:latest'
+    persistent_home: false
+    image: 'lsstsqre/sciplat-hub:exp_0.38.0'
 
   wf:
     ingress_ui:
       annotations:
         nginx.ingress.kubernetes.io/auth-method: GET
         nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
-        nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp.ddns.net/login"
-        nginx.ingress.kubernetes.io/auth-url: "http://gafaelfawr-service.gafaelfawr.svc.cluster.local:8080/auth?scope=exec:notebook"
+        nginx.ingress.kubernetes.io/auth-signin: "https://rsp.lapp.in2p3.fr/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://rsp.lapp.in2p3.fr/auth?scope=exec:notebook"
         nginx.ingress.kubernetes.io/configuration-snippet: |
           proxy_set_header X-Forwarded-Proto https;
           proxy_set_header X-Forwarded-Port 443;
@@ -22,23 +38,14 @@ nublado:
           proxy_set_header X-Portal-Authorization "Bearer $auth_token";
           error_page 403 = "/auth/forbidden?scope=exec:notebook";
 
-  lab:
-    restrict_nodes: 'true'
-    image:
-      experimentals: 0
-      dailies: 0
-      releases: 0
-      weeklies: 1
-      cachefile: '/home/jovyan/repo-cache.json'
-
-    resources:
-      nodejs_max_mem: '6144'
-      mb_per_cpu: 2048
+  prepuller:
+    image: 'lsstsqre/prepuller:0.9.4'
+    schedule: "57 01,07,13,19 * * *"
 
   routes:
     soda: '/api/image/soda'
     external:
-      instance: 'https://rsp-lapp.ddns.net'
+      instance: 'https://rsp.lapp.in2p3.fr'
 
   dask:
     restrict_nodes: 'true'
@@ -50,10 +57,10 @@ nublado:
   proxy:
     ingress:
       annotations:
-        nginx.ingress.kubernetes.io/auth-request-redirect: $request_uri
+        nginx.ingress.kubernetes.io/auth-method: GET
         nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Token
-        nginx.ingress.kubernetes.io/auth-signin: "https://rsp-lapp.ddns.net/login"
-        nginx.ingress.kubernetes.io/auth-url: "http://gafaelfawr-service.gafaelfawr.svc.cluster.local:8080/auth?scope=exec:notebook"
+        nginx.ingress.kubernetes.io/auth-signin: "https://rsp.lapp.in2p3.fr/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://rsp.lapp.in2p3.fr/auth?scope=exec:notebook"
         nginx.ingress.kubernetes.io/configuration-snippet: |
           proxy_set_header X-Forwarded-Proto https;
           proxy_set_header X-Forwarded-Port 443;
@@ -61,7 +68,7 @@ nublado:
           auth_request_set $auth_token $upstream_http_x_auth_request_token;
           proxy_set_header X-Portal-Authorization "Bearer $auth_token";
           error_page 403 = "/auth/forbidden?scope=exec:notebook";
-      host: rsp-lapp.ddns.net
+      host: rsp.lapp.in2p3.fr
 
   mountpoints: |
     [
@@ -90,3 +97,5 @@ nublado:
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
+
+
