@@ -14,7 +14,7 @@ gafaelfawr:
     host: "rsp.lapp.in2p3.fr"
 
     github:
-      clientId: 59331e15cb2a3c3261ad
+      clientId: "59331e15cb2a3c3261ad"
 
     # Allow access by GitHub team.
     groupMapping:
@@ -47,4 +47,5 @@ gafaelfawr:
 pull-secret:
   enabled: true
   path: secret/k8s_operator/rsp-lapp/pull-secret
+
 
