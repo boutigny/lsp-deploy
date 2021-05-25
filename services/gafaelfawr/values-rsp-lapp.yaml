@@ -14,7 +14,7 @@ gafaelfawr:
     host: "rsp.lapp.in2p3.fr"
 
     github:
-      clientId: "59331e15cb2a3c3261ad"
+      clientId: "bf216316caab0dfa2127"
 
     # Allow access by GitHub team.
     groupMapping:
