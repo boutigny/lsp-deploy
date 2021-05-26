@@ -34,5 +34,5 @@ moneypenny:
       - name: homedirs
         nfs:
           server: 134.158.100.202
-          path: /home
+          path: /home/homedirs
 
