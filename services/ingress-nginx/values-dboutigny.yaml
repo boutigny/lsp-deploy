@@ -1,8 +1,8 @@
 ingress-nginx:
   controller:
     nodeSelector:
-      kubernetes.io/hostname: "bou001"
-      
+      kubernetes.io/hostname: "192.168.0.79"
+
     config:
       compute-full-forwarded-for: "true"
       large-client-header-buffers: "4 64k"
