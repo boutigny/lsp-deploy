@@ -84,13 +84,13 @@ nublado:
         "mountpoint": "/data",
         "mode": "rw",
         "fileserver-host": "134.158.100.202",
-        "fileserver-export": "/data"
+        "hostpath": "/home/lsst/data"
       },
       {
         "mountpoint": "/home",
         "mode": "rw",
         "fileserver-host": "134.158.100.202",
-        "fileserver-export": "/home"
+        "hostpath": "/home/lsst/homedirs"
       }
     ]
 
