@@ -20,8 +20,9 @@ moneypenny:
         securityContext:
           runAsUser: 0
           runAsNonRootUser: false
-        moneypenny_storage_class: 'rsp-local-storage'
-        volume_name: 'moneypenny-home-rsp-lapp'
+        volumeMounts:
+        - mountPath: /homedirs
+          name: homedirs
     retire:
       - name: farthing
         image: lsstsqre/farthing
@@ -29,4 +30,9 @@ moneypenny:
           runAsUser: 1000
           runAsNonRootUser: true
           allowPrivilegeEscalation: false
+    volumes:
+      - name: homedirs
+        nfs:
+          server: 134.158.100.202
+          path: /home/homedirs
 
