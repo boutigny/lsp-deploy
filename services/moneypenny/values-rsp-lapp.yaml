@@ -32,6 +32,6 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-	persistentVolumeClaim:
-          claimName: moneypenny/moneypenny-physpvc
+        persistentVolumeClaim:
+          claimName: moneypenny-physpvc
 
