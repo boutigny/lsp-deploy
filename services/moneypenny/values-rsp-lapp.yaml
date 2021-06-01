@@ -32,6 +32,6 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-        moneypenny_storage_class: 'rsp-local-storage'
-        volume_name: 'moneypenny-home-rsp-lapp'
+	persistentVolumeClaim:
+          claimName: moneypenny/moneypenny-physpvc
 
