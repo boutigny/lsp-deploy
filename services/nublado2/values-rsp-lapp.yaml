@@ -20,11 +20,11 @@ nublado2:
 
     volumes:
       - name: data
-        persistentVolumeClaim:
-          claimName: posgres-physpvc
+        hostPath:
+          path: /home/lsst/data
       - name: home
-        persistentVolumeClaim:
-          claimName: homedirs-pvc
+        hostPath:
+          path: /home/lsst/homedirs
     volume_mounts:
       - name: data
         mountPath: /data
