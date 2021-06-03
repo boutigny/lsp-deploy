@@ -30,11 +30,6 @@ moneypenny:
           runAsUser: 1000
           runAsNonRootUser: true
           allowPrivilegeEscalation: false
-#    volumes:
-#      - name: homedirs
-#        persistentVolumeClaim:
-#          claimName: homedirs-pvc
-
     volumes:
       - name: homedirs
         nfs:
