@@ -30,14 +30,14 @@ moneypenny:
           runAsUser: 1000
           runAsNonRootUser: true
           allowPrivilegeEscalation: false
-    volumes:
-      - name: homedirs
-        persistentVolumeClaim:
-          claimName: homedirs-pvc
-
 #    volumes:
 #      - name: homedirs
-#        nfs:
-#          server: 134.158.100.202
-#          path: /var/nfsdir/jhome
+#        persistentVolumeClaim:
+#          claimName: homedirs-pvc
+
+    volumes:
+      - name: homedirs
+        nfs:
+          server: 134.158.100.202
+          path: /var/nfsdir/jhome
 
