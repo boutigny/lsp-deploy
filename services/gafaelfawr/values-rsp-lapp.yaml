@@ -12,6 +12,7 @@ gafaelfawr:
 
   config:
     host: "rsp.lapp.in2p3.fr"
+    databaseUrl: "postgresql://gafaelfawr@postgres.postgres/gafaelfawr"
 
     github:
       clientId: "bf216316caab0dfa2127"
