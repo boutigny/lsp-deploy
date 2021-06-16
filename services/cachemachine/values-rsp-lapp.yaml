@@ -1,8 +1,8 @@
 cachemachine:
   host: "rsp.lapp.in2p3.fr"
 
-  image:
-    tag: "1.0.4"
+#  image:
+#    tag: "1.0.4"
 
   ingress:
     enabled: true
@@ -25,9 +25,9 @@ cachemachine:
             "registry_url": "registry.hub.docker.com",
             "repo": "lsstsqre/sciplat-lab",
             "recommended_tag": "recommended",
-            "num_releases": 0,
-            "num_weeklies": 0,
-            "num_dailies": 0
+            "num_releases": 1,
+            "num_weeklies": 2,
+            "num_dailies": 3
           }
         ]
       }
