@@ -1,0 +1,11 @@
+squareone:
+  ingress:
+    host: "rsp.lapp.in2p3.fr"
+  imagePullSecrets:
+    - name: "pull-secret"
+  config:
+    siteName: "Rubin Science Platform @ lapp in2p3"
+
+pull-secret:
+  enabled: true
+  path: secret/k8s_operator/rsp-lapp/pull-secret
