@@ -12,6 +12,7 @@ gafaelfawr:
 
   config:
     host: "dboutigny.freeboxos.fr"
+    databaseUrl: "postgresql://gafaelfawr@localhost/gafaelfawr"
 
     github:
       clientId: "59331e15cb2a3c3261ad"
