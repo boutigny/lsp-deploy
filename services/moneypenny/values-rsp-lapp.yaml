@@ -33,5 +33,5 @@ moneypenny:
     volumes:
       - name: homedirs
         hostPath:
-          path: /var/nfsdir/jhome
+          path: /home/lsst/jhome
 
