@@ -32,7 +32,6 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-        nfs:
-          server: 134.158.100.202
+        hostPath:
           path: /var/nfsdir/jhome
 
