@@ -1,9 +1,6 @@
 cachemachine:
   host: "rsp.lapp.in2p3.fr"
 
-#  image:
-#    tag: "1.0.4"
-
   ingress:
     enabled: true
     hosts:
