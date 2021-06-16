@@ -32,6 +32,7 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-        hostPath:
-          path: /home/lsst/jhome
+        persistentVolumeClaim:
+          claimName: homedirs-physpvc
+
 
