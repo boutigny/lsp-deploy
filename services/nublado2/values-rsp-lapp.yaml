@@ -20,11 +20,11 @@ nublado2:
 
     volumes:
       - name: data
-        hostPath:
-          path: /var/nfsdir/data
+        persistentVolumeClaim:
+          claimName: postgres-physpvc
       - name: home
-        hostPath:
-          path: /var/nfsdir/jhome
+        persistentVolumeClaim:
+          path: homedirs-physpvc
 
     volume_mounts:
       - name: data
