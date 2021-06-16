@@ -17,6 +17,9 @@ nublado2:
 
   config:
     base_url: "https://rsp.lapp.in2p3.fr/"
+    lab_environment:
+      TURN_ON_MONEYPENNY: 'true'
+      enable_moneypenny: 'true'
 
     volumes:
       - name: data
