@@ -20,13 +20,11 @@ nublado2:
 
     volumes:
       - name: data
-        nfs:
+        hostPath:
           path: /var/nfsdir/data
-          server: 134.158.100.202
       - name: home
-        nfs:
+        hostPath:
           path: /var/nfsdir/jhome
-          server: 134.158.100.202
 
     volume_mounts:
       - name: data
