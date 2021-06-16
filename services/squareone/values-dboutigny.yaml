@@ -1,0 +1,17 @@
+squareone:
+  ingress:
+    host: "dboutigny.freeboxos.fr"
+    annotations:
+      cert-manager.io/cluster-issuer: cert-issuer-letsencrypt-dns
+    tls:
+      - secretName: squareone-tls
+        hosts:
+          - "dboutigny.freeboxos.fr"
+  imagePullSecrets:
+    - name: "pull-secret"
+  config:
+    siteName: "Rubin Science Platform"
+
+pull-secret:
+  enabled: true
+  path: secret/k8s_operator/data.lsst.cloud/pull-secret
