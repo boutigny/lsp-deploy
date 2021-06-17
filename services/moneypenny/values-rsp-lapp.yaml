@@ -32,7 +32,7 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-        hostPath: /home/lsst/homdirs
+        hostPath: /home/lsst/homedirs
 
 
 
