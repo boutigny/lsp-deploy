@@ -10,6 +10,9 @@ nublado2:
       storage:
         type: none
 
+    lab:
+      enable_moneypenny: 'true'
+ 
     ingress:
       hosts: ["rsp.lapp.in2p3.fr"]
       annotations:
