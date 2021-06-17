@@ -38,6 +38,10 @@ gafaelfawr:
       "read:image":
         - "lsst-france-calcul"
 
+    initialAdmins:
+       - "hellebore74"
+       - "boutigny"
+
   # Use CILogon authentication.
   #cilogon:
   #  client_id: "cilogon:/client_id/74e865cd71a3a327096d36081166b739"
