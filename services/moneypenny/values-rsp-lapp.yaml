@@ -36,12 +36,4 @@ moneypenny:
           runAsUser: 1000
           runAsNonRootUser: true
           allowPrivilegeEscalation: false
-<<<<<<< HEAD
-=======
-    volumes:
-      - name: homedirs
-        hostPath: /home/lsst/homedirs
-
->>>>>>> f340c7f415b94b02aafb9c403780685bff7c911c
-
 
