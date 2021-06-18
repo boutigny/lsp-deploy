@@ -13,6 +13,25 @@ moneypenny:
     enabled: true
     path: "secret/k8s_operator/rsp-lapp/pull-secret"
 
+
+
+  spec:
+    containers:
+      - name: initcommission
+        image: lsstsqre/inituserhome
+        securityContext:
+          runAsUser: 0
+          runAsNonRootUser: false
+        volumeMounts:
+        - name: homedirs
+          mountPath: /homedirs
+    volumes:
+      - name: homedirs
+        nfs:
+          server: 134.158.100.202
+          path: /var/nfsdir/jhome
+
+
   orders: |
     commission:
       - name: initcommission
