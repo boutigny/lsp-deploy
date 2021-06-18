@@ -3,9 +3,6 @@ nublado2:
     debug:
       enabled: true
 
-    hub:
-      base_url: "/nb2"
-
     singleuser:
       storage:
         type: none
@@ -14,6 +11,7 @@ nublado2:
       hosts: ["dboutigny.freeboxos.fr"]
       annotations:
         nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook&notebook=true"
 
   config:
     base_url: "dboutigny.freeboxos.fr/"
