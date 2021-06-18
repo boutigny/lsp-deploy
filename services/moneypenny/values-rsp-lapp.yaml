@@ -13,16 +13,22 @@ moneypenny:
     enabled: true
     path: "secret/k8s_operator/rsp-lapp/pull-secret"
 
+  initcontainer
+    - name: initcommission
+      image: lsstsqre/inituserhome
+      securityContext:
+        runAsUser: 0
+        runAsNonRootUser: false
+      volumeMounts:
+      - mountPath: /homedirs
+        name: homedirs
+
+  volumes:
+    - name: homedirs
+      hostPath:
+        path: /home/lsst/jhome
+
   orders: |
-    commission:
-      - name: initcommission
-        image: lsstsqre/inituserhome
-        securityContext:
-          runAsUser: 0
-          runAsNonRootUser: false
-        volumeMounts:
-        - mountPath: /homedirs
-          name: homedirs
     retire:
       - name: farthing
         image: lsstsqre/farthing
@@ -30,9 +36,12 @@ moneypenny:
           runAsUser: 1000
           runAsNonRootUser: true
           allowPrivilegeEscalation: false
+<<<<<<< HEAD
+=======
     volumes:
       - name: homedirs
         hostPath: /home/lsst/homedirs
 
+>>>>>>> f340c7f415b94b02aafb9c403780685bff7c911c
 
 
