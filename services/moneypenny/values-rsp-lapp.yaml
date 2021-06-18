@@ -13,7 +13,7 @@ moneypenny:
     enabled: true
     path: "secret/k8s_operator/rsp-lapp/pull-secret"
 
-  initContainer
+  initContainer:
     - name: initcommission
       image: lsstsqre/inituserhome
       securityContext:
