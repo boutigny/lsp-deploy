@@ -23,18 +23,19 @@ nublado2:
 
     volumes:
       - name: data
-        persistentVolumeClaim:
-          claimName: postgres-physpvc
+        nfs:
+          path: /var/nfsdir/data
+          server: 134.158.100.202
       - name: home
-        persistentVolumeClaim:
-          path: homedirs-physpvc
+        nfs:
+          path: /var/nfsdir/jhome
+          server: 134.158.100.202
 
     volume_mounts:
       - name: data
         mountPath: /data
       - name: home
         mountPath: /home
-
 
   vault_secret_path: "secret/k8s_operator/rsp-lapp/nublado2"
   gafaelfawr_secrets_path: "secret/k8s_operator/rsp-lapp/gafaelfawr"
