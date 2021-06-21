@@ -1,9 +1,6 @@
 cachemachine:
   host: "dboutigny.freeboxos.fr"
 
-  image:
-    tag: "1.0.4"
-
   ingress:
     enabled: true
     hosts:
