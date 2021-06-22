@@ -6,8 +6,8 @@ moneypenny:
     hosts:
       - host: rsp.lapp.in2p3.fr
         paths: ["/moneypenny"]
-    annotations:
-      nginx.ingress.kubernetes.io/auth-url: "https://rsp.lapp.in2p3.fr/auth?scope=exec:admin"
+   annotations:
+      nginx.ingress.kubernetes.io/auth-url: "https://rsp.lapp.in2p3.fr/auth?scope=admin:provision"
 
   vault_secrets:
     enabled: true
