@@ -1,15 +1,13 @@
 firefly:
   pull_secret: 'pull-secret'
-  image:
-    tag: "rc-2.1.0-2"
 
   ingress:
     host: "dboutigny.freeboxos.fr"
     annotations:
       nginx.ingress.kubernetes.io/auth-method: GET
-      nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-Uid, X-Auth-Request-Token
+      nginx.ingress.kubernetes.io/auth-response-headers: X-Auth-Request-User,X-Auth-Request-Name,X-Auth-Request-Email,X-Auth-Request-Token
       nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
-      nginx.ingress.kubernetes.io/auth-url: "http://dboutigny.freeboxos.fr/auth?scope=exec:portal"
+      nginx.ingress.kubernetes.io/auth-url: "http://dboutigny.freeboxos.fr/auth?scope=exec:portal&delegate_to=portal&delegate_scope=read:tap"
       nginx.ingress.kubernetes.io/configuration-snippet: |
         proxy_set_header X-Original-URI $request_uri;
         proxy_set_header X-Forwarded-Proto https;
@@ -23,7 +21,11 @@ firefly:
       memory: 8Gi
 
   secrets:
+    enabled: false
+
+  vault_secrets:
     enabled: true
+    path: 'secret/k8s_operator/dboutigny.freeboxos.fr/portal'
 
   redis:
     resources:

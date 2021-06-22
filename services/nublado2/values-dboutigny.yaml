@@ -14,7 +14,7 @@ nublado2:
         nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook&notebook=true"
 
   config:
-    base_url: "dboutigny.freeboxos.fr/"
+    base_url: "https://dboutigny.freeboxos.fr/"
 
     volumes:
       - name: data
