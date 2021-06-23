@@ -11,7 +11,6 @@ nublado2:
       hosts: ["dboutigny.freeboxos.fr"]
       annotations:
         nginx.ingress.kubernetes.io/auth-signin: "https://dboutigny.freeboxos.fr/login"
-        nginx.ingress.kubernetes.io/auth-url: "https://dboutigny.freeboxos.fr/auth?scope=exec:notebook&notebook=true"
 
   config:
     base_url: "https://dboutigny.freeboxos.fr/"
@@ -33,3 +32,4 @@ nublado2:
 
   vault_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/nublado2"
   gafaelfawr_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
+  
