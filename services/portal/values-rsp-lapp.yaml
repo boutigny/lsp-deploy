@@ -20,9 +20,6 @@ firefly:
     limits:
       memory: 8Gi
 
-  secrets:
-    enabled: false
-
   vault_secrets:
     enabled: true
     path: 'secret/k8s_operator/dboutigny.freeboxos.fr/portal'
