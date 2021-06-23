@@ -22,7 +22,7 @@ firefly:
 
   vault_secrets:
     enabled: true
-    path: 'secret/k8s_operator/dboutigny.freeboxos.fr/portal'
+    path: 'secret/k8s_operator/rsp-lapp/portal'
 
   redis:
     resources:
