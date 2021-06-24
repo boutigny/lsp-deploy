@@ -28,7 +28,12 @@ argo-cd:
           name: ingress-nginx
         - url: https://charts.helm.sh/stable
           name: stable
-configs:
+
+    rbacConfig:
+      policy.csv: |
+        g, lsst-france:calcul, role:admin
+
+  configs:
     secret:
       createSecret: false
 
