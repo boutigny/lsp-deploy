@@ -14,6 +14,7 @@ nublado2:
 
   config:
     base_url: "https://dboutigny.freeboxos.fr/"
+    butler_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/butler-secret"
 
     volumes:
       - name: data
@@ -32,4 +33,3 @@ nublado2:
 
   vault_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/nublado2"
   gafaelfawr_secret_path: "secret/k8s_operator/dboutigny.freeboxos.fr/gafaelfawr"
-  
