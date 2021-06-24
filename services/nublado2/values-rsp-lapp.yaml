@@ -20,6 +20,7 @@ nublado2:
 
   config:
     base_url: "https://rsp.lapp.in2p3.fr/"
+    butler_secret_path: "secret/k8s_operator/rsp-lapp/butler-secret"
 
     volumes:
       - name: data
