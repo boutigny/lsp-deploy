@@ -32,7 +32,7 @@ moneypenny:
           allowPrivilegeEscalation: false
     volumes:
       - name: homedirs
-        persistentVolumeClaim:
-          claimName: homedirs-physpvc
-
+        nfs:
+          server: 134.158.100.202
+          path: /var/nfsdir/jhome
 
