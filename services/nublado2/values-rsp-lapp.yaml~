@@ -26,7 +26,6 @@ nublado2:
       - name: data
         persistentVolumeClaim:
           claimName: postgres-physpvc
-          namespace: postgres
       - name: home
         persistentVolumeClaim:
           claimName: homedirs-physpvc
