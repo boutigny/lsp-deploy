@@ -25,11 +25,9 @@ nublado2:
     volumes:
       - name: data
         persistentVolumeClaim:
-          namespace: postgres
           claimName: postgres-physpvc
       - name: home
         persistentVolumeClaim:
-          namespace: moneypenny
           claimName: homedirs-physpvc
 
     volume_mounts:

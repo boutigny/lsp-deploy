@@ -33,7 +33,6 @@ moneypenny:
     volumes:
       - name: homedirs
         persistentVolumeClaim:
-          namespace: moneypenny
           claimName: homedirs-physpvc
 
 
