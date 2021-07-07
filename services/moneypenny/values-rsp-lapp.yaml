@@ -33,6 +33,6 @@ moneypenny:
     volumes:
       - name: homedirs
         persistentVolumeClaim:
-          claimName: homedirs-physpvc
+          claimName: moneypenny/homedirs-physpvc
 
 
