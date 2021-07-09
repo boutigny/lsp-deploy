@@ -24,11 +24,13 @@ nublado2:
 
     volumes:
       - name: data
-        persistentVolumeClaim:
-          claimName: data-physpvc
+        nfs:
+          path: /var/nfsdir/data
+          server: 134.158.100.202
       - name: home
-        persistentVolumeClaim:
-          claimName: homedirs-physpvc
+        nfs:
+          path: /var/nfsdir/jhome
+          server: 134.158.100.202
 
     volume_mounts:
       - name: data
